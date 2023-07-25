@@ -15,7 +15,6 @@ permissions:
 
 jobs:
   build-image:
-    runs-on: [linux, x64]
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
     steps:
       - name: Set up Docker Buildx
