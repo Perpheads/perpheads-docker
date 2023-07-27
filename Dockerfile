@@ -6,4 +6,4 @@ USER container
 
 COPY assets/ /
 
-CMD ["/bin/sh", "/home/container/wrapper.sh"]
+CMD ["/bin/sh", "/wrapper.sh"]
