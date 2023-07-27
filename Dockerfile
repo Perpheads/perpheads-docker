@@ -4,7 +4,6 @@ USER root
 RUN apt-get install -y git
 USER container
 
-ADD assets/.env /home/container/
-COPY assets/ /home/container/
+COPY assets/ /
 
 CMD ["/bin/sh", "/home/container/wrapper.sh"]

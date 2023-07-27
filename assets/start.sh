@@ -1,4 +1,3 @@
 #!/bin/bash
-echo "This file should be replaced by the actual startup script of the container"
-echo "Sleeping for 15 seconds, then exiting"
-sleep 15
+
+$( [ "$PHYSGUN_UTILS" == "0" ] || printf %s LD_PRELOAD="/physgun/scrds.so" ) exec ./srcds_run -game garrysmod -console -port {{SERVER_PORT}} +ip 0.0.0.0 +host_workshop_collection {{WORKSHOP_ID}} +map {{SRCDS_MAP}} +gamemode {{GAMEMODE}} -strictportbind -norestart +sv_setsteamaccount {{STEAM_ACC}} +maxplayers {{MAX_PLAYERS}} -tickrate {{TICKRATE}}  $( [ "$LUA_REFRESH" == "1" ] || printf %s '-disableluarefresh' ) $( [ "$NO_ADDONS" == "0" ] || printf %s '-noaddons' ) $( [ "$NO_WORKSHOP" == "0" ] || printf %s '-noworkshop' )
