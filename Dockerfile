@@ -1,9 +1,10 @@
 FROM ghcr.io/pterodactyl/games:source
 
 USER root
+COPY assets/ /
+RUN chmod +x /*.sh
 RUN apt-get install -y git
 USER container
 
-COPY assets/ /
 
 CMD ["/bin/sh", "/wrapper.sh"]
